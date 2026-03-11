@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Sistema Gestión de Laboratorios</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#020617;
+color:white;
+min-height:100vh;
+overflow:auto;
+}
+
+/* FONDO BURBUJAS */
+
+.bubbles{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+overflow:hidden;
+}
+
+.bubbles span{
+position:absolute;
+bottom:-100px;
+width:20px;
+height:20px;
+background:rgba(56,189,248,0.3);
+border-radius:50%;
+animation:rise 10s linear infinite;
+}
+
+.bubbles span:nth-child(1){left:10%; animation-duration:8s;}
+.bubbles span:nth-child(2){left:20%; animation-duration:12s; width:15px; height:15px;}
+.bubbles span:nth-child(3){left:30%; animation-duration:10s;}
+.bubbles span:nth-child(4){left:40%; animation-duration:14s; width:25px; height:25px;}
+.bubbles span:nth-child(5){left:50%; animation-duration:9s;}
+.bubbles span:nth-child(6){left:60%; animation-duration:11s;}
+.bubbles span:nth-child(7){left:70%; animation-duration:13s;}
+.bubbles span:nth-child(8){left:80%; animation-duration:7s;}
+.bubbles span:nth-child(9){left:90%; animation-duration:10s;}
+.bubbles span:nth-child(10){left:25%; animation-duration:15s;}
+
+@keyframes rise{
+0%{
+transform:translateY(0) scale(1);
+opacity:0.5;
+}
+100%{
+transform:translateY(-120vh) scale(1.5);
+opacity:0;
+}
+}
+
+/* NAVBAR */
+
+nav{
+background:#020617;
+padding:18px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+nav h1{
+font-size:22px;
+letter-spacing:1px;
+color:#38bdf8;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+padding:8px 14px;
+border-radius:6px;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#38bdf8;
+}
+
+/* CONTENIDO */
+
+.container{
+padding:50px;
+}
+
+.container h2{
+margin-bottom:30px;
+font-size:28px;
+}
+
+/* TARJETAS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.card{
+background:#0f172a;
+padding:35px;
+border-radius:12px;
+text-align:center;
+transition:0.3s;
+}
+
+/* ICONO TARJETA */
+
+.icon{
+font-size:40px;
+margin-bottom:10px;
+display:block;
+}
+
+/* COLORES DE TARJETAS */
+
+.cards .card:nth-child(1){border:2px solid #00f7ff;}
+.cards .card:nth-child(2){border:2px solid #00ff9d;}
+.cards .card:nth-child(3){border:2px solid #facc15;}
+.cards .card:nth-child(4){border:2px solid #a855f7;}
+.cards .card:nth-child(5){border:2px solid #fb7185;}
+
+/* EFECTO HOVER */
+
+.cards .card:nth-child(1):hover{box-shadow:0 0 15px #00f7ff,0 0 30px #00f7ff;}
+.cards .card:nth-child(2):hover{box-shadow:0 0 15px #00ff9d,0 0 30px #00ff9d;}
+.cards .card:nth-child(3):hover{box-shadow:0 0 15px #facc15,0 0 30px #facc15;}
+.cards .card:nth-child(4):hover{box-shadow:0 0 15px #a855f7,0 0 30px #a855f7;}
+.cards .card:nth-child(5):hover{box-shadow:0 0 15px #fb7185,0 0 30px #fb7185;}
+
+.card:hover{
+transform:translateY(-8px) scale(1.05);
+}
+
+.card a{
+text-decoration:none;
+color:white;
+font-size:18px;
+font-weight:bold;
+display:block;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BURBUJAS -->
+<div class="bubbles">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<nav>
+<h1>Gestión de Equipos</h1>
+
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="reporte.html">Reportes</a></li>
+<li><a href="requisicion.html">Requisición</a></li>
+<li><a href="vale.html">Vales</a></li>
+<li><a href="compra.html">Compras</a></li>
+<li><a href="login.html">Salir</a></li>
+</ul>
+</nav>
+
+<div class="container">
+
+<h2>Panel del Sistema</h2>
+
+<div class="cards">
+
+<div class="card">
+<span class="icon">🛠</span>
+<a href="reporte.html">Reporte de Fallas</a>
+</div>
+
+<div class="card">
+<span class="icon">📋</span>
+<a href="requisicion.html">Requisición de Equipos</a>
+</div>
+
+<div class="card">
+<span class="icon">📦</span>
+<a href="vale.html">Vale de Salida</a>
+</div>
+
+<div class="card">
+<span class="icon">🔎</span>
+<a href="seguimiento.html">Seguimiento</a>
+</div>
+
+<div class="card">
+<span class="icon">🛒</span>
+<a href="compra.html">Solicitud de Compra</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
