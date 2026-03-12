@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,6 +20,26 @@ color:white;
 min-height:100vh;
 padding:40px;
 overflow:auto;
+}
+
+/* BOTON VOLVER */
+
+.volver{
+position:fixed;
+bottom:20px;
+left:20px;
+background:#38bdf8;
+color:white;
+text-decoration:none;
+padding:10px 18px;
+border-radius:6px;
+transition:0.3s;
+z-index:2;
+}
+
+.volver:hover{
+box-shadow:0 0 10px #38bdf8,0 0 20px #38bdf8;
+transform:scale(1.05);
 }
 
 /* BURBUJAS */
@@ -74,6 +93,7 @@ max-width:1000px;
 margin:auto;
 position:relative;
 z-index:1;
+padding-bottom:200px;
 }
 
 /* TITULOS */
@@ -118,6 +138,8 @@ background:#1e293b;
 </head>
 
 <body>
+
+<a href="principal.html" class="volver">⬅ Volver al menú principal</a>
 
 <!-- BURBUJAS -->
 <div class="bubbles">
@@ -187,4 +209,7 @@ background:#1e293b;
 
 </body>
 </html>
+
+
+
 
